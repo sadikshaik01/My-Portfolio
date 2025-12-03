@@ -8,7 +8,7 @@ import interImg from "/character-gifs/inter.gif";
 import btechImg from "/character-gifs/btech.gif";
 
 // === CV File ===
-import myCV from "/character-gifs/shaik.sadik.pdf";
+import myCV from "/character-gifs/SHAIK.SADIK-RESUME.pdf";
 
 export default function About() {
   const bannersRef = useRef([]);
