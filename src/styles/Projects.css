@@ -4,7 +4,8 @@
 .projects-container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(0, 102, 255, 0.10) 0%, transparent 60%),
+              linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
   color: var(--anime-text);
   overflow-x: hidden;
   padding: 0 0 120px 0;

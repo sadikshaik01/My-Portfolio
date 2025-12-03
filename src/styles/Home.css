@@ -4,7 +4,8 @@
 .home-page {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--anime-bg) 0%, var(--anime-surface) 50%, #F8F9FF 100%);
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(0, 102, 255, 0.10) 0%, transparent 60%),
+              linear-gradient(135deg, var(--anime-bg) 0%, var(--anime-surface) 50%, #F8F9FF 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
