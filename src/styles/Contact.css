@@ -4,7 +4,8 @@
 .contact-container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(0, 102, 255, 0.10) 0%, transparent 60%),
+              linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
   padding-bottom: 100px;
   position: relative;
   overflow: hidden;
@@ -16,15 +17,15 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 80px 8%;
-  background: rgba(250, 251, 252, 0.85);
+  padding: 78px 7%;
+  background: linear-gradient(135deg, rgba(250, 251, 252, 0.9), rgba(250, 251, 252, 0.85));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 30px;
   width: 90%;
   margin: 80px auto;
-  box-shadow: var(--anime-shadow-lg);
-  border: 1px solid rgba(0, 102, 255, 0.1);
+  box-shadow: 0 18px 40px rgba(0, 102, 255, 0.15);
+  border: 1px solid rgba(0, 102, 255, 0.12);
   animation: fadeUp 1.5s ease forwards;
 }
 
@@ -79,22 +80,22 @@
 .contact-links a {
   color: var(--anime-primary);
   font-weight: 600;
-  background: rgba(250, 251, 252, 0.8);
+  background: rgba(250, 251, 252, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: 20px;
-  padding: var(--anime-space-sm) var(--anime-space-md);
+  border-radius: 16px;
+  padding: 10px 14px;
   text-decoration: none;
   transition: all var(--anime-motion-normal) ease;
-  box-shadow: var(--anime-shadow-soft);
-  border: 1px solid rgba(0, 102, 255, 0.1);
+  box-shadow: 0 8px 18px rgba(0, 102, 255, 0.12);
+  border: 1px solid rgba(0, 102, 255, 0.12);
 }
 
 .contact-links a:hover {
-  background: var(--anime-primary);
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-accent));
   color: white;
-  transform: translateY(-2px);
-  box-shadow: var(--anime-shadow-medium);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 102, 255, 0.25);
 }
 
 .contact-links a:focus-visible {
@@ -106,13 +107,13 @@
 .contact-form {
   width: 85%;
   margin: 50px auto;
-  background: rgba(250, 251, 252, 0.85);
+  background: linear-gradient(135deg, rgba(250, 251, 252, 0.92), rgba(250, 251, 252, 0.86));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: var(--anime-radius-lg);
   padding: var(--anime-space-xl);
-  box-shadow: var(--anime-shadow-lg);
-  border: 1px solid rgba(0, 102, 255, 0.1);
+  box-shadow: 0 22px 46px rgba(0, 102, 255, 0.16);
+  border: 1px solid rgba(0, 102, 255, 0.12);
   animation: fadeUp 1.5s ease forwards;
 }
 
@@ -134,20 +135,31 @@
   width: 100%;
   padding: 12px var(--anime-space-md);
   border-radius: var(--anime-radius-sm);
-  border: 2px solid transparent;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 2px 4px rgba(0, 102, 255, 0.08);
+  border: 1.5px solid rgba(0, 102, 255, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 1px 3px rgba(0, 102, 255, 0.08);
   font-size: 1rem;
   font-family: var(--anime-body);
   color: var(--anime-text);
   transition: all var(--anime-motion-normal) ease;
+}
+/* Align SVG icons with text */
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-links a svg {
+  width: 20px;
+  height: 20px;
 }
 
 .form-grid input:focus,
 .form-grid textarea:focus {
   outline: none;
   border-color: var(--anime-primary);
-  box-shadow: 0 0 12px rgba(0, 102, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
 }
 
 .form-grid textarea {
@@ -175,7 +187,7 @@
 .contact-btn {
   display: block;
   margin: 30px auto 0;
-  background: linear-gradient(135deg, var(--anime-primary), var(--anime-accent));
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
   color: white;
   font-weight: 600;
   font-size: 1rem;
@@ -183,13 +195,13 @@
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: var(--anime-shadow-medium);
+  box-shadow: 0 14px 28px rgba(0, 102, 255, 0.22);
   transition: all var(--anime-motion-normal) ease;
 }
 
 .contact-btn:hover {
   transform: translateY(-3px);
-  box-shadow: var(--anime-shadow-medium);
+  box-shadow: 0 18px 32px rgba(0, 102, 255, 0.28);
 }
 
 .contact-btn:focus-visible {
@@ -222,7 +234,7 @@
   background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
   color: white !important;
   border-radius: var(--anime-radius-md) !important;
-  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
+  box-shadow: 0 10px 26px rgba(0, 102, 255, 0.28);
   font-weight: 600;
   font-size: 1rem;
   text-align: center;
@@ -243,7 +255,7 @@
 .Toastify__toast {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  border: 1px solid rgba(0, 102, 255, 0.18);
 }
 
 @keyframes popToast {
