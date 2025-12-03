@@ -1,0 +1,120 @@
+@import "./anime.css";
+
+/* === TOP NAVBAR === */
+.site-navbar {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(250, 251, 252, 0.98), rgba(245, 246, 247, 0.98));
+  border-bottom: 1px solid rgba(0, 102, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--anime-shadow-soft);
+}
+
+.site-navbar .nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px var(--anime-space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--anime-space-sm);
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--anime-space-sm);
+  font-weight: 800;
+  color: var(--anime-primary);
+  font-family: var(--anime-heading);
+  font-size: 1.05rem;
+  padding: var(--anime-space-sm) var(--anime-space-md);
+  border-radius: var(--anime-radius-sm);
+  background: linear-gradient(90deg, rgba(0, 102, 255, 0.08), rgba(0, 229, 255, 0.05));
+  transition: all var(--anime-motion-normal) ease;
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  background: linear-gradient(90deg, rgba(0, 102, 255, 0.12), rgba(0, 229, 255, 0.08));
+  transform: translateY(-2px);
+}
+
+.site-logo:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 2px;
+}
+
+.site-navlinks {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.site-navlinks a {
+  color: var(--anime-muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--anime-space-sm);
+  border-radius: var(--anime-radius-sm);
+  transition: all var(--anime-motion-fast) ease;
+  position: relative;
+}
+
+.site-navlinks a:hover {
+  color: var(--anime-primary);
+  transform: translateY(-3px);
+}
+
+.site-navlinks a:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 2px;
+  color: var(--anime-primary);
+}
+
+.site-navlinks a.active {
+  color: var(--anime-primary);
+}
+
+.site-navlinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--anime-primary);
+  transition: all var(--anime-motion-normal) ease;
+  transform: translateX(-50%);
+}
+
+.site-navlinks a:hover::after,
+.site-navlinks a.active::after {
+  width: 80%;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .site-navlinks {
+    gap: var(--anime-space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .site-navlinks {
+    gap: var(--anime-space-sm);
+    font-size: 0.95rem;
+  }
+
+  .site-logo {
+    font-size: 1rem;
+    padding: var(--anime-space-xs) var(--anime-space-sm);
+  }
+
+  .site-navbar .nav-inner {
+    padding: var(--anime-space-sm);
+  }
+}

@@ -1,0 +1,71 @@
+/* anime.css
+   Global theme variables — Stunning Minimal Design
+   Modern, clean, and sophisticated color palette
+*/
+
+:root.theme-anime {
+  /* -------------------------- */
+  /*      MINIMAL PALETTE       */
+  /* -------------------------- */
+  --anime-primary: #6366F1;           /* Modern Indigo - Bold yet refined */
+  --anime-secondary: #8B5CF6;         /* Vibrant Purple - Accent color */
+  --anime-accent: #EC4899;            /* Hot Pink - Energy & creativity */
+
+  /* Neutrals - Refined grayscale */
+  --anime-bg: #FAFAFA;                /* Soft off-white */
+  --anime-surface: #FFFFFF;           /* Pure white surfaces */
+  --anime-text: #0F172A;              /* Rich dark slate */
+  --anime-muted: #64748B;             /* Balanced gray */
+  --anime-divider: #E2E8F0;           /* Subtle borders */
+
+  /* Gradient stops for depth */
+  --anime-gradient-start: #6366F1;
+  --anime-gradient-end: #8B5CF6;
+  
+  /* Glass morphism */
+  --anime-glass-bg: rgba(255, 255, 255, 0.7);
+  --anime-glass-border: rgba(255, 255, 255, 0.18);
+
+  /* -------------------------- */
+  /*      TYPOGRAPHY TOKENS     */
+  /* -------------------------- */
+  --anime-heading: 'Orbitron', system-ui, -apple-system, sans-serif;
+  --anime-body: 'Nunito', system-ui, -apple-system, sans-serif;
+  --anime-font-size-base: 16px;
+
+  /* -------------------------- */
+  /*     BORDER RADIUS TOKENS   */
+  /* -------------------------- */
+  --anime-radius-sm: 8px;
+  --anime-radius-md: 16px;
+  --anime-radius-lg: 24px;
+
+  /* -------------------------- */
+  /*         SHADOW TOKENS      */
+  /* -------------------------- */
+  --anime-shadow-soft: 0 1px 3px rgba(99, 102, 241, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --anime-shadow-medium: 0 4px 6px -1px rgba(99, 102, 241, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --anime-shadow-strong: 0 10px 15px -3px rgba(99, 102, 241, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* -------------------------- */
+  /*         SPACING TOKENS     */
+  /* -------------------------- */
+  --anime-space-xs: 4px;
+  --anime-space-sm: 8px;
+  --anime-space-md: 16px;
+  --anime-space-lg: 24px;
+  --anime-space-xl: 48px;
+
+  /* -------------------------- */
+  /*         OPACITY TOKENS     */
+  /* -------------------------- */
+  --anime-opacity-hover: 0.9;
+  --anime-opacity-disabled: 0.4;
+
+  /* -------------------------- */
+  /*       ANIMATION TOKENS     */
+  /* -------------------------- */
+  --anime-motion-fast: 150ms;
+  --anime-motion-normal: 250ms;
+  --anime-motion-slow: 350ms;
+}

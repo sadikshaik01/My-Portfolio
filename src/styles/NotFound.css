@@ -1,0 +1,227 @@
+/* === 404 Not Found Page === */
+@import "./anime.css";
+
+.notfound-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--anime-space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.notfound-content {
+  text-align: center;
+  max-width: 600px;
+  padding: var(--anime-space-xl);
+  background: rgba(250, 251, 252, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--anime-radius-lg);
+  box-shadow: var(--anime-shadow-lg);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  animation: fadeUp 0.8s ease forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.error-code {
+  font-size: clamp(5rem, 15vw, 10rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1;
+  margin-bottom: var(--anime-space-md);
+  animation: glitch 2s ease-in-out infinite;
+}
+
+.notfound-title {
+  margin-bottom: var(--anime-space-md);
+}
+
+.notfound-subtitle {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--anime-text);
+  margin-bottom: var(--anime-space-md);
+}
+
+.toon-text {
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.notfound-message {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--anime-muted);
+  margin-bottom: var(--anime-space-xl);
+  line-height: 1.6;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: var(--anime-space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-btn,
+.back-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--anime-motion-normal) ease;
+  border: none;
+  text-decoration: none;
+}
+
+.home-btn {
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-accent));
+  color: white;
+  box-shadow: var(--anime-shadow-medium);
+}
+
+.home-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--anime-shadow-lg);
+}
+
+.back-btn {
+  background: rgba(250, 251, 252, 0.9);
+  color: var(--anime-primary);
+  border: 2px solid var(--anime-primary);
+}
+
+.back-btn:hover {
+  background: var(--anime-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.home-btn:focus-visible,
+.back-btn:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 3px;
+}
+
+/* === Floating Emojis === */
+.notfound-illustration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-emoji {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.3;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-emoji:nth-child(1) {
+  top: 15%;
+  left: 10%;
+}
+
+.floating-emoji:nth-child(2) {
+  top: 70%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.floating-emoji:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+/* === Animations === */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 
+      2px 2px 0 rgba(0, 102, 255, 0.3),
+      -2px -2px 0 rgba(0, 229, 255, 0.3);
+  }
+  25% {
+    text-shadow: 
+      -2px 2px 0 rgba(0, 102, 255, 0.3),
+      2px -2px 0 rgba(0, 229, 255, 0.3);
+  }
+  50% {
+    text-shadow: 
+      2px -2px 0 rgba(0, 102, 255, 0.3),
+      -2px 2px 0 rgba(0, 229, 255, 0.3);
+  }
+  75% {
+    text-shadow: 
+      -2px -2px 0 rgba(0, 102, 255, 0.3),
+      2px 2px 0 rgba(0, 229, 255, 0.3);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 640px) {
+  .notfound-content {
+    padding: var(--anime-space-lg);
+  }
+
+  .notfound-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-btn,
+  .back-btn {
+    width: 100%;
+  }
+
+  .floating-emoji {
+    font-size: 2rem;
+  }
+}
+
+/* === Accessibility === */
+@media (prefers-reduced-motion: reduce) {
+  .notfound-content,
+  .floating-emoji,
+  .error-code {
+    animation: none;
+  }
+
+  .error-code {
+    text-shadow: none;
+  }
+}

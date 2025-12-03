@@ -1,0 +1,152 @@
+@import "./anime.css";
+
+/* === BOTTOM NAVIGATION === */
+.tooncore-nav {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(250, 251, 252, 0.92), rgba(245, 246, 247, 0.88));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 42px;
+  border: 1px solid rgba(0, 102, 255, 0.15);
+  box-shadow: var(--anime-shadow-lg);
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  padding: 12px 20px;
+  z-index: 100;
+  min-width: 300px;
+}
+
+.nav-highlight {
+  position: absolute;
+  top: 10%;
+  left: 6px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.95), rgba(0, 229, 255, 0.25));
+  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.2);
+  transition: transform 0.32s cubic-bezier(0.22, 0.9, 0.3, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* === NAV ITEMS === */
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.nav-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--anime-primary);
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform var(--anime-motion-fast) ease, color var(--anime-motion-fast) ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-4px);
+  color: var(--anime-accent);
+}
+
+.nav-btn:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 2px;
+}
+
+.nav-btn.active {
+  color: var(--anime-primary);
+  text-shadow: 0 0 12px rgba(0, 102, 255, 0.6);
+}
+
+/* === TOOLTIP LABELS === */
+.nav-label {
+  position: absolute;
+  bottom: 74px;
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  color: #fff;
+  padding: var(--anime-space-sm) var(--anime-space-sm);
+  border-radius: var(--anime-radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--anime-motion-fast) ease;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+.nav-item:hover .nav-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  .tooncore-nav {
+    padding: 10px 12px;
+    gap: var(--anime-space-sm);
+    min-width: 240px;
+    bottom: 20px;
+  }
+
+  .nav-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .nav-highlight {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-label {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .tooncore-nav {
+    min-width: 200px;
+    gap: 8px;
+  }
+
+  .nav-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .nav-highlight {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .nav-highlight {
+    transition: none;
+  }
+
+  .nav-btn:hover {
+    transform: none;
+  }
+}

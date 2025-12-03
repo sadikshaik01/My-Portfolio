@@ -1,0 +1,215 @@
+@import "./anime.css";
+
+/* === HOME PAGE === */
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--anime-bg) 0%, var(--anime-surface) 50%, #F8F9FF 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  color: var(--anime-text);
+}
+
+/* === HERO SECTION === */
+.home-container {
+  width: 100%;
+  min-height: 86vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--anime-space-lg);
+  padding: 6vh 6%;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--anime-space-md);
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: var(--anime-heading);
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  font-weight: 700;
+  color: var(--anime-text);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.toon-text {
+  color: var(--anime-primary);
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  margin-top: var(--anime-space-sm);
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  color: var(--anime-muted);
+  max-width: 85%;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  margin-top: var(--anime-space-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--anime-space-sm);
+  background: linear-gradient(145deg, var(--anime-primary), var(--anime-accent));
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--anime-shadow-soft);
+  transition: transform var(--anime-motion-normal) ease, box-shadow var(--anime-motion-normal) ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--anime-shadow-medium);
+}
+
+.hero-btn:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 3px;
+}
+
+.hero-btn:active {
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 86%;
+  max-width: 520px;
+  border-radius: var(--anime-radius-lg);
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 18px 60px rgba(168, 197, 255, 0.15);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* === TRAITS SECTION === */
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--anime-primary);
+  margin: 64px 0 var(--anime-space-lg);
+}
+
+.traits-scroll-wrapper {
+  width: 100%;
+  padding: 20px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === ABOUT PREVIEW === */
+.about-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 40px 0 100px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 6%;
+}
+
+.about-block {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: var(--anime-surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--anime-radius-md);
+  padding: var(--anime-space-md);
+  border: 1px solid var(--anime-divider);
+  box-shadow: var(--anime-shadow-soft);
+  transition: transform var(--anime-motion-normal) ease, box-shadow var(--anime-motion-normal) ease;
+}
+
+.about-block:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--anime-shadow-medium);
+  border-color: var(--anime-primary);
+}
+
+.about-block img {
+  width: 120px;
+  border-radius: var(--anime-radius-sm);
+  object-fit: cover;
+}
+
+.about-block h3 {
+  color: var(--anime-primary);
+  margin: 0 0 var(--anime-space-sm) 0;
+}
+
+.about-block p {
+  margin: 0;
+  color: var(--anime-muted);
+  line-height: 1.6;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    padding: 6vh 5%;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+
+  .about-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-block img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-block img {
+    width: 80px;
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image img {
+    animation: none;
+  }
+}

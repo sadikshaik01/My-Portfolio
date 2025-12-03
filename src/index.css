@@ -1,0 +1,103 @@
+/* src/index.css — ToonCore Portfolio Global Styles */
+@import "./styles/anime.css";
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Global Reset & Base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--anime-body, "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+  background: var(--anime-bg, #ffffff);
+  color: var(--anime-text, #1F1F1F);
+  line-height: 1.6;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--anime-heading);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  color: var(--anime-primary);
+  text-decoration: none;
+  transition: color var(--anime-motion-fast) ease;
+}
+
+a:hover {
+  color: var(--anime-accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* === Lists === */
+ul, ol {
+  list-style: none;
+}
+
+/* === Images === */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Buttons === */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all var(--anime-motion-normal) ease;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 2px;
+}
+
+/* === Utility Classes === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--anime-space-md);
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

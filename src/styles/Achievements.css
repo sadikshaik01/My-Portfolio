@@ -1,0 +1,192 @@
+/* === ToonCore Achievements (Clean ZigZag Edition) === */
+@import "./anime.css";
+
+.achievements-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+  color: var(--anime-text);
+}
+
+/* === HERO === */
+.achievements-hero {
+  text-align: center;
+  padding: 100px 8% 60px;
+}
+
+.achievements-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--anime-text);
+}
+
+.toon-text {
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.achievements-sub {
+  margin-top: var(--anime-space-md);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: var(--anime-muted);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* === BANNERS === */
+.achievement-banner {
+  width: 85%;
+  margin: 50px auto;
+  padding: var(--anime-space-xl);
+  border-radius: var(--anime-radius-lg);
+  background: rgba(250, 251, 252, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--anime-shadow-lg);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.achievement-banner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.achievement-content {
+  display: flex;
+  align-items: center;
+  gap: var(--anime-space-xl);
+}
+
+.achievement-banner.reverse .achievement-content {
+  flex-direction: row-reverse;
+}
+
+.achievement-image img {
+  width: 160px;
+  border-radius: var(--anime-radius-md);
+  filter: drop-shadow(0 6px 16px rgba(0, 102, 255, 0.2));
+  transition: transform 0.6s ease;
+}
+
+.achievement-banner:hover .achievement-image img {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.achievement-text {
+  flex: 1;
+  text-align: left;
+}
+
+.achievement-text h3 {
+  color: var(--anime-primary);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: var(--anime-space-sm);
+}
+
+.achievement-text p {
+  color: var(--anime-text);
+  line-height: 1.7;
+  margin: var(--anime-space-sm) 0 var(--anime-space-lg);
+}
+
+/* === View Button === */
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--anime-space-sm);
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-accent));
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all var(--anime-motion-normal) ease;
+  text-decoration: none;
+  box-shadow: var(--anime-shadow-medium);
+}
+
+.view-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--anime-shadow-medium);
+}
+
+.view-btn:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 3px;
+}
+
+.view-btn:active {
+  transform: translateY(-1px);
+}
+
+/* === Animations === */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 900px) {
+  .achievement-content {
+    flex-direction: column !important;
+    text-align: center;
+    gap: var(--anime-space-lg);
+  }
+
+  .achievement-banner.reverse .achievement-content {
+    flex-direction: column !important;
+  }
+
+  .achievement-image img {
+    width: 140px;
+    margin-bottom: var(--anime-space-md);
+  }
+
+  .achievement-text {
+    text-align: center;
+  }
+
+  .view-btn {
+    width: 80%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .achievement-banner {
+    width: 90%;
+    padding: var(--anime-space-lg);
+  }
+
+  .achievement-image img {
+    width: 120px;
+  }
+
+  .view-btn {
+    font-size: 0.9rem;
+    padding: 10px var(--anime-space-md);
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .achievement-banner {
+    animation: none;
+    transition: none;
+  }
+
+  .achievement-banner {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,216 @@
+/* === ToonCore Skills Page (Glass + Badges Edition) === */
+@import "./anime.css";
+
+.skills-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
+  color: var(--anime-text);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
+/* === HERO === */
+.skills-hero {
+  text-align: center;
+  padding: 100px 8% 60px;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.skills-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--anime-text);
+  font-weight: 700;
+}
+
+.toon-text {
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skills-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--anime-muted);
+  margin-top: var(--anime-space-sm);
+  line-height: 1.6;
+}
+
+/* === SKILL BANNERS === */
+.skills-banner {
+  width: 85%;
+  margin: 50px auto;
+  padding: var(--anime-space-xl) 30px;
+  border-radius: var(--anime-radius-lg);
+  background: var(--anime-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--anime-divider);
+  box-shadow: var(--anime-shadow-soft);
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
+  text-align: center;
+}
+
+.skills-banner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-banner h2 {
+  color: var(--anime-primary);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: var(--anime-space-lg);
+}
+
+/* === GRID === */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* === BADGES === */
+.skill-badge {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--anime-radius-md);
+  background: var(--anime-surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--anime-divider);
+  box-shadow: var(--anime-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--anime-motion-slow) ease;
+  animation: floatBadge 5s ease-in-out infinite;
+}
+
+.skill-badge:nth-child(2n) {
+  animation-delay: 0.5s;
+}
+
+.skill-badge:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+.skill-badge img,
+.skill-badge .icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: var(--anime-space-sm);
+  filter: drop-shadow(0 4px 6px rgba(168, 197, 255, 0.2));
+  transition: transform var(--anime-motion-normal) ease;
+}
+
+.skill-badge .icon {
+  font-size: 2.5rem;
+  color: var(--anime-primary);
+}
+
+.skill-badge span {
+  font-size: 0.95rem;
+  color: var(--anime-text);
+  font-weight: 600;
+  display: block;
+}
+
+.skill-badge:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: var(--anime-shadow-medium);
+}
+
+.skill-badge:hover img,
+.skill-badge:hover .icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.skill-badge:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 3px;
+}
+
+/* === CAPTIONS === */
+.skills-caption {
+  font-size: 1rem;
+  color: var(--anime-primary);
+  font-style: italic;
+  margin-top: var(--anime-space-lg);
+  text-shadow: 0 2px 8px rgba(168, 197, 255, 0.15);
+  animation: fadeUp 1.3s ease-in-out;
+}
+
+/* === ANIMATIONS === */
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(60px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .skill-badge {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skill-badge img,
+  .skill-badge .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-badge .icon {
+    font-size: 2rem;
+  }
+
+  .skills-caption {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .skill-badge {
+    width: 90px;
+    height: 90px;
+  }
+
+  .skill-badge img,
+  .skill-badge .icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .skill-badge span {
+    font-size: 0.85rem;
+  }
+
+  .skills-caption {
+    font-size: 0.9rem;
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .skills-banner,
+  .skill-badge {
+    animation: none;
+    transition: none;
+  }
+
+  .skills-banner {
+    opacity: 1;
+    transform: none;
+  }
+}

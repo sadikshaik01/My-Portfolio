@@ -1,0 +1,303 @@
+/* === ToonCore Contact Page (Glass Form Edition) === */
+@import "./anime.css";
+
+.contact-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
+  padding-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === HERO SECTION === */
+.contact-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 80px 8%;
+  background: rgba(250, 251, 252, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 30px;
+  width: 90%;
+  margin: 80px auto;
+  box-shadow: var(--anime-shadow-lg);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.contact-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    var(--anime-shadow-medium),
+    inset 0 2px 6px rgba(255, 255, 255, 0.8);
+  animation: float 4s ease-in-out infinite;
+}
+
+.contact-right {
+  flex: 1.2;
+  color: var(--anime-text);
+}
+
+.contact-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: var(--anime-space-md);
+}
+
+.toon-text {
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-intro {
+  color: var(--anime-muted);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.7;
+}
+
+/* === CONTACT LINKS === */
+.contact-links {
+  margin-top: var(--anime-space-lg);
+  display: flex;
+  gap: var(--anime-space-lg);
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  color: var(--anime-primary);
+  font-weight: 600;
+  background: rgba(250, 251, 252, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: var(--anime-space-sm) var(--anime-space-md);
+  text-decoration: none;
+  transition: all var(--anime-motion-normal) ease;
+  box-shadow: var(--anime-shadow-soft);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+}
+
+.contact-links a:hover {
+  background: var(--anime-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--anime-shadow-medium);
+}
+
+.contact-links a:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 2px;
+}
+
+/* === FORM SECTION === */
+.contact-form {
+  width: 85%;
+  margin: 50px auto;
+  background: rgba(250, 251, 252, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--anime-radius-lg);
+  padding: var(--anime-space-xl);
+  box-shadow: var(--anime-shadow-lg);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.form-title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  color: var(--anime-primary);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--anime-space-lg);
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  padding: 12px var(--anime-space-md);
+  border-radius: var(--anime-radius-sm);
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 2px 4px rgba(0, 102, 255, 0.08);
+  font-size: 1rem;
+  font-family: var(--anime-body);
+  color: var(--anime-text);
+  transition: all var(--anime-motion-normal) ease;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+  outline: none;
+  border-color: var(--anime-primary);
+  box-shadow: 0 0 12px rgba(0, 102, 255, 0.3);
+}
+
+.form-grid textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-consent {
+  margin-top: var(--anime-space-lg);
+  text-align: center;
+  color: var(--anime-muted);
+  font-size: 0.95rem;
+}
+
+.form-consent input {
+  accent-color: var(--anime-primary);
+  cursor: pointer;
+}
+
+.form-consent label {
+  cursor: pointer;
+}
+
+/* === BUTTON === */
+.contact-btn {
+  display: block;
+  margin: 30px auto 0;
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-accent));
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: var(--anime-shadow-medium);
+  transition: all var(--anime-motion-normal) ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--anime-shadow-medium);
+}
+
+.contact-btn:focus-visible {
+  outline: 2px solid var(--anime-primary);
+  outline-offset: 3px;
+}
+
+.contact-btn:active {
+  transform: translateY(-1px);
+}
+
+.contact-btn:disabled {
+  opacity: var(--anime-opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(60px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* === TOONCORE TOASTIFY STYLING === */
+.toon-toast-success {
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  color: white !important;
+  border-radius: var(--anime-radius-md) !important;
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  animation: popToast 0.4s ease-out;
+}
+
+.toon-toast-error {
+  background: linear-gradient(135deg, #ff6b6b, #ff9b9b);
+  color: white !important;
+  border-radius: var(--anime-radius-md) !important;
+  box-shadow: 0 6px 18px rgba(255, 90, 90, 0.3);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  animation: popToast 0.4s ease-out;
+}
+
+.Toastify__toast {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+@keyframes popToast {
+  0% {
+    transform: scale(0.8) translateY(10px);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05) translateY(-5px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .contact-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--anime-space-xl);
+  }
+
+  .contact-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-form {
+    padding: var(--anime-space-lg);
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .contact-hero,
+  .contact-form,
+  .contact-img {
+    animation: none;
+  }
+}

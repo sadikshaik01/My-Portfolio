@@ -1,0 +1,280 @@
+/* === ToonCore About (Glass + Scroll Reveal + Animated) === */
+@import "./anime.css";
+
+.about-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--anime-bg) 0%, var(--anime-surface) 100%);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+  color: var(--anime-text);
+}
+
+/* === HERO === */
+.about-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 8%;
+  gap: 60px;
+  background: var(--anime-surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 30px;
+  border: 1px solid var(--anime-divider);
+  width: 90%;
+  margin: 80px auto;
+  box-shadow: var(--anime-shadow-medium);
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    var(--anime-shadow-medium),
+    inset 0 2px 6px rgba(255, 255, 255, 0.8);
+  animation: float 4s ease-in-out infinite;
+  transition: transform var(--anime-motion-slow) ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+.hero-right {
+  flex: 1.2;
+  color: var(--anime-text);
+}
+
+.about-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--anime-text);
+  margin-bottom: var(--anime-space-lg);
+}
+
+.toon-text {
+  background: linear-gradient(135deg, var(--anime-primary), var(--anime-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-intro {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--anime-muted);
+  line-height: 1.7;
+  margin-bottom: var(--anime-space-md);
+}
+
+.highlight {
+  color: var(--anime-primary);
+  font-weight: 600;
+}
+
+.about-desc {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  color: var(--anime-text);
+  line-height: 1.7;
+}
+
+/* === EDUCATION SECTION === */
+.education-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  color: var(--anime-primary);
+  margin-bottom: var(--anime-space-xl);
+}
+
+/* === GLASS BANNERS === */
+.edu-banner {
+  width: 85%;
+  margin: 50px auto;
+  padding: var(--anime-space-xl) var(--anime-space-lg);
+  border-radius: var(--anime-radius-lg);
+  background: var(--anime-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--anime-divider);
+  box-shadow: var(--anime-shadow-soft);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.edu-banner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.edu-content {
+  display: flex;
+  align-items: center;
+  gap: var(--anime-space-xl);
+}
+
+.edu-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.edu-image img {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 10px rgba(168, 197, 255, 0.2));
+  transition: transform 0.6s ease;
+}
+
+.edu-banner:hover .edu-image img {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.edu-text {
+  flex: 1;
+  text-align: left;
+}
+
+.edu-text h3 {
+  color: var(--anime-primary);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: var(--anime-space-sm);
+}
+
+.edu-text h4 {
+  color: var(--anime-text);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  margin-bottom: var(--anime-space-sm);
+}
+
+.edu-duration,
+.edu-cgpa {
+  color: var(--anime-muted);
+  font-size: 1rem;
+}
+
+.edu-desc {
+  color: var(--anime-text);
+  margin-top: var(--anime-space-sm);
+  line-height: 1.7;
+}
+
+/* === SCROLL ANIMATIONS === */
+.fade-up,
+.fade-left,
+.fade-right {
+  opacity: 0;
+}
+
+.fade-up {
+  transform: translateY(60px);
+}
+
+.fade-left {
+  transform: translateX(-80px);
+}
+
+.fade-right {
+  transform: translateX(80px);
+}
+
+.fade-up.visible,
+.fade-left.visible,
+.fade-right.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* === FLOAT ANIMATION === */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(60px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .edu-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .edu-content.reverse {
+    flex-direction: column;
+  }
+
+  .edu-image img {
+    width: 130px;
+  }
+
+  .edu-text {
+    text-align: center;
+  }
+
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 8%;
+    gap: var(--anime-space-xl);
+  }
+
+  .about-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .edu-image img {
+    width: 110px;
+  }
+
+  .about-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .about-img,
+  .edu-banner,
+  .fade-up,
+  .fade-left,
+  .fade-right {
+    animation: none;
+    transition: none;
+  }
+
+  .edu-banner {
+    opacity: 1;
+    transform: none;
+  }
+
+  .fade-up.visible,
+  .fade-left.visible,
+  .fade-right.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
