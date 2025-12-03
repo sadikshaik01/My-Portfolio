@@ -112,7 +112,7 @@ export default function Projects() {
             <p className="project-desc">
               A real-time breaking news application fetching headlines from multiple APIs.
             </p>
-            <p className="project-caption">“Your daily headlines in a fun ToonCore layout 🚀📢”</p>
+            <p className="project-caption">“Your daily headlines in a fun SlayerCore layout 🚀📢”</p>
 
             <div className="project-actions">
               <a
